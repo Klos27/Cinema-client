@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="mytheme" parent="Theme.AppCompat.Light.DarkActionBar" >
+        <!--<item name="android:_DEFAULT_BASE_COLOR_1">#XXXXXX</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@android:color/holo_red_dark</item>-->
+        <!--<item name="colorPrimaryDark">@android:color/darker_gray</item>-->
+        <!--<item name="colorAccent">@android:color/holo_orange_dark</item>-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">#bbb</item>
+        <item name="android:background">#333333</item>
+        <item name="buttonStyle">@style/btxs</item>
+    </style>
+    <style name="btxs" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">#bbb</item>
+        <item name="android:background">#555555</item>
+        <item name="android:onClick"></item>
+
+    </style>
+</resources>
+

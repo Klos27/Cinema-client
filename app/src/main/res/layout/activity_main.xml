@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kloslabs.cinemaclient.MainActivity">
+
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/ledOnBtn"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="16dp"
+            android:text="On"
+            app:layout_constraintEnd_toStartOf="@+id/ledLabel"
+            app:layout_constraintTop_toTopOf="parent"></Button>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Button Seven"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/light2Status"></Button>
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="32dp"
+            android:text="Button Eight"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2"></Button>
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="32dp"
+            android:text="Button Nine"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button9"></Button>
+
+        <Button
+            android:id="@+id/ledOffBtn"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:text="Off"
+            app:layout_constraintStart_toEndOf="@+id/ledLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ledStatus"
+            android:layout_width="50dp"
+            android:layout_height="22dp"
+            android:background="#ac5d5e"
+            android:gravity="center"
+            android:text="Off"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ledLabel" />
+
+        <TextView
+            android:id="@+id/ledLabel"
+            android:layout_width="50dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="LED"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/ledSeekBar"
+            android:layout_width="346dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="12dp"
+            android:max="255"
+            android:progress="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ledStatus" />
+
+        <Spinner
+            android:id="@+id/movieSpinner"
+            android:layout_width="113dp"
+            android:layout_height="33dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="12dp"
+            android:popupBackground="@color/colorPrimaryDark"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toStartOf="@+id/movieStatus"
+            app:layout_constraintTop_toBottomOf="@+id/ledSeekBar" />
+
+        <TextView
+            android:id="@+id/movieLabel"
+            android:layout_width="80dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Animation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ledSeekBar" />
+
+        <TextView
+            android:id="@+id/movieStatus"
+            android:layout_width="50dp"
+            android:layout_height="22dp"
+            android:background="#ac5d5e"
+            android:gravity="center"
+            android:text="Off"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movieLabel" />
+
+        <Button
+            android:id="@+id/movieStartBtn"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="12dp"
+            android:text="Start"
+            app:layout_constraintStart_toEndOf="@+id/movieStatus"
+            app:layout_constraintTop_toBottomOf="@+id/ledSeekBar" />
+
+        <Button
+            android:id="@+id/turnOffAllBtn"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:onClick="turnOffAllBtnClickHandler"
+            android:text="Turn Off All"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/turnOnAllBtn"
+            app:layout_constraintTop_toBottomOf="@+id/movieStatus" />
+
+        <Button
+            android:id="@+id/turnOnAllBtn"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:text="Turn On All"
+            app:layout_constraintEnd_toStartOf="@+id/turnOffAllBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/movieStatus" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp" />
+
+        <Button
+            android:id="@+id/preset1Btn"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Preset 1"
+            app:layout_constraintEnd_toStartOf="@+id/preset2Btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/turnOnAllBtn" />
+
+        <Button
+            android:id="@+id/preset2Btn"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Preset 2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/preset1Btn"
+            app:layout_constraintTop_toBottomOf="@+id/turnOffAllBtn" />
+
+        <Button
+            android:id="@+id/preset3Btn"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Preset 3"
+            app:layout_constraintEnd_toStartOf="@+id/preset4Btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/preset1Btn" />
+
+        <Button
+            android:id="@+id/preset4Btn"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Preset 4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/preset3Btn"
+            app:layout_constraintTop_toBottomOf="@+id/preset2Btn" />
+
+        <Button
+            android:id="@+id/light1OnBtn"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="8dp"
+            android:text="ON"
+            app:layout_constraintEnd_toStartOf="@+id/light1Label"
+            app:layout_constraintTop_toBottomOf="@+id/preset3Btn" />
+
+        <Button
+            android:id="@+id/light1OffBtn"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:text="OFF"
+            app:layout_constraintStart_toEndOf="@+id/light1Label"
+            app:layout_constraintTop_toBottomOf="@+id/preset4Btn" />
+
+        <TextView
+            android:id="@+id/light1Status"
+            android:layout_width="50dp"
+            android:layout_height="22dp"
+            android:background="#ac5d5e"
+            android:gravity="center"
+            android:text="Off"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/light1Label" />
+
+        <TextView
+            android:id="@+id/light1Label"
+            android:layout_width="50dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Light 1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preset4Btn" />
+
+        <Button
+            android:id="@+id/light2OnBtn"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="8dp"
+            android:text="ON"
+            app:layout_constraintEnd_toStartOf="@+id/light2Label"
+            app:layout_constraintTop_toBottomOf="@+id/light1OnBtn" />
+
+        <Button
+            android:id="@+id/light2OffBtn"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:text="OFF"
+            app:layout_constraintStart_toEndOf="@+id/light2Label"
+            app:layout_constraintTop_toBottomOf="@+id/light1OffBtn" />
+
+        <TextView
+            android:id="@+id/light2Label"
+            android:layout_width="50dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Light 2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/light1Status" />
+
+        <TextView
+            android:id="@+id/light2Status"
+            android:layout_width="50dp"
+            android:layout_height="22dp"
+            android:background="#ac5d5e"
+            android:gravity="center"
+            android:text="Off"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/light2Label" />
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
