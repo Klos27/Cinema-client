@@ -4,6 +4,7 @@ package com.kloslabs.cinemaclient.connections;
  * Created by Klos on 01.03.2018.
  */
 
+import android.util.Log;
 import android.widget.TextView;
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -27,6 +28,8 @@ public class UDPReciver extends Thread{
 //        });
 //        System.out.println(toprint);
         this.mCallBack.updateStatus(data);
+//        System.out.println("Got data!! " + data);
+        Log.d("AndroidApp", "Got data!! " + data);
     }
 
     public UDPReciver(StatusCallback callBack) throws IOException {
@@ -36,20 +39,29 @@ public class UDPReciver extends Thread{
     }
 
     public void run() {
+        Log.d("UDPReciver", "Starting server...");
         try {
             while(!StopServer) {
                 byte buf[] = new byte[PACKETSIZE];
                 DatagramPacket packet = new DatagramPacket(buf, buf.length);
                 try {
+                    Log.d("UDPReciver SoTime", "New Try");
+//                    ConnectionUDP.sendUDPMsgNoThread("STATUS");
                     rxsocket.receive(packet);
+                    Log.d("UDPReciver SoTime", "Process data");
                     String data = new String(packet.getData(), 0, packet.getLength());
                     onData(data);
                 } catch(SocketTimeoutException e) {
+                    Log.d("UDPReciver SoTime", e.getMessage());
                 }
             }
-            rxsocket.close();
+
         } catch (IOException e) {
-            System.out.println("IOException");
+            Log.d("UDPReciver IOEx", e.getMessage());
+        }
+        finally {
+            Log.d("UDPReciver", "Server STOP!");
+            rxsocket.close();
         }
     }
 

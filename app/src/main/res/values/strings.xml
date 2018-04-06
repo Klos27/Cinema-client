@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Cinema Client</string>
+    <string-array name="context_view">
+        <item>Off</item>
+        <item>Mov 1</item>
+        <item>Mov 2</item>
+        <item>Mov 3</item>
+        <item>Mov 4</item>
+        <item>Mov 5</item>
+        <item>Mov 6</item>
+        <item>Mov 7</item>
+        <item>Mov 8</item>
+        <item>Mov 9</item>
+    </string-array>
 </resources>
+
